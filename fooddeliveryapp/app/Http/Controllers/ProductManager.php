@@ -23,18 +23,18 @@ class ProductManager extends Controller
         $product->image = $request->image;
         if($product->save()){
             return redirect(route("products"))
-            ->with("success", "Product added successfully");
+                ->with("success", "Product added successfully");
         }
         return redirect(route("products"))
-            ->with("error", "Failed to add Product");
+            ->with("error", "Failed  to add Product");
     }
 
     function deleteProducts(Request $request){
-        if(Products::where("id", $request->id)->delete()){
+        if(Products::where("id",$request->id)->delete()){
             return redirect(route("products"))
-            ->with("success", "Product deleted successfully");
+                ->with("success", "Product deleted successfully");
         }
         return redirect(route("products"))
-        ->with("error", "Failed to delete Product");
+            ->with("error", "Failed  to delete Product");
     }
 }

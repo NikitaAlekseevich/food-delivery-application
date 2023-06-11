@@ -20,7 +20,7 @@ Route::prefix("admin")->middleware(RoleAdmin::class)->group(function(){
     Route::get('dashboard', function(){
         return "dashboard";
     })->name('dashboard');
-    Route::get('products', [ProductManager::class, "listProducts"])->name("product");
+    Route::get('products', [ProductManager::class, "listProducts"])->name("products");
     Route::post('products', [ProductManager::class, "addProducts"])->name("product.add");
     Route::get('products/delete', [ProductManager::class, "deleteProducts"])->name("product.delete");
 });
