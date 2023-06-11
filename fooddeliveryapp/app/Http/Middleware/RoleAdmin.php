@@ -15,6 +15,8 @@ class RoleAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        if(auth()->check() && auth()->user()->type == "admin")
+            return $next($request);
+        abort(403);
     }
 }
