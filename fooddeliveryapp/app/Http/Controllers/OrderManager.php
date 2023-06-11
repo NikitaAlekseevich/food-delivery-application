@@ -52,5 +52,6 @@ class OrderManager extends Controller
                 }
             }
         }
+        return view("order", compact("orders"));
     }
 }
