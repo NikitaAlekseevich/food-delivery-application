@@ -14,6 +14,7 @@ Route::get('dashboard', function(){
 })->name('dashboard');
 
 Route::get("login", [AuthManager::class, "login"])->name("login");
+Route::get("logout", [AuthManager::class, "logout"])->name("logout");
 Route::post("login", [AuthManager::class, "loginPost"])->name("login.post");
 
 Route::prefix("admin")->middleware(RoleAdmin::class)->group(function(){
