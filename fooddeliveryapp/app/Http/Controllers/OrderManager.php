@@ -26,4 +26,15 @@ class OrderManager extends Controller
         }
         return view("dashboard", compact("orders", "delivery_boys"));
     }
+    function assignOrder(Request $request){
+        $order = Orders::where("id", $request->order_id)->first();
+        $order->delivery_boy_email = $request->delivery_boy_email;
+        $order->status = "assigned";
+        if($order->save()){
+            return redirect(route("dashboard"))
+            ->with("success", "Order assigned successfully");
+        }
+        return redirect(route("dashboard"))
+            ->with("error", "Failed to assign Order");
+    }
 }
