@@ -37,4 +37,20 @@ class OrderManager extends Controller
         return redirect(route("dashboard"))
             ->with("error", "Failed to assign Order");
     }
+
+    function listOrders(){
+        $orders = Orders::orderBy("id", "DESC")->get();
+        $orders = json_decode(json_encode($orders));
+        $products = Products::get();
+        foreach($orders as $key => $order){
+            $order_item_ids = json_decode($order->items);
+            foreach($order_item_ids as $key2 => $order_item){
+                foreach($products as $product){
+                    if($order_item -> item_id == $product->id){
+                        $orders[$key]->item_details[$key2] = $product;
+                    }
+                }
+            }
+        }
+    }
 }
