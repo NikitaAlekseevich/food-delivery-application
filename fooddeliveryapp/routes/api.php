@@ -20,11 +20,11 @@ Route::any("/users/delivery/failed", [DeliveryBoyManager::class, "markStatusFail
 Route::any("/products/list", [ProductManager::class, "getProducts"]);
 
 
-Route::any("/user/cart/add", [OrderManager::class, "addToCart"]);
-Route::any("/user/cart/remove", [OrderManager::class, "removeFromCart"]);
-Route::any("/user/cart/list", [OrderManager::class, "getCart"]);
-Route::any("/user/cart/confirm", [OrderManager::class, "confirmCart"]);
-Route::any("/user/cart/clear", [OrderManager::class, "clearCart"]);
-Route::any("/user/orders/list", [OrderManager::class, "getOrders"]);
+Route::any("/users/cart/add", [OrderManager::class, "addToCart"]);
+Route::any("/users/cart/remove", [OrderManager::class, "removeFromCart"]);
+Route::any("/users/cart/list", [OrderManager::class, "getCart"]);
+Route::any("/users/cart/confirm", [OrderManager::class, "confirmCart"]);
+Route::any("/users/cart/clear", [OrderManager::class, "clearCart"]);
+Route::any("/users/orders/list", [OrderManager::class, "getOrders"]);
 
-Route::any("/user/orders/update", [CustomerManager::class, "updateAddress"]);
+Route::any("/users/address/update", [CustomerManager::class, "updateAddress"]);

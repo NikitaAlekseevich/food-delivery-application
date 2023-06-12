@@ -12,12 +12,12 @@ class AuthApiManager extends Controller
     function login(Request $request)
     {
         if (empty($request->email) && empty($request->password)) {
-            return array("status" => "failed", "message" => "All fields are required");
+            return array("status" => "failed", "message" => "Все поля обязательны для заполнения");
         }
 
         $user = User::where("email", $request->email)->first();
         if (!$user) {
-            return array("status" => "failed", "message" => "Retry with correct credentials");
+            return array("status" => "failed", "message" => "Повторите попытку с правильными данными");
         }
 
         $credentials = $request->only("email", "password");
@@ -27,7 +27,7 @@ class AuthApiManager extends Controller
                 "name" => $user->name, "email" => $user->email);
         }
 
-        return array("status" => "failed", "message" => "Retry with correct credentials");
+        return array("status" => "failed", "message" => "Повторите попытку с правильными данными");
 
 
     }

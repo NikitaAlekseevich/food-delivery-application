@@ -27,16 +27,16 @@
                                                     value="{{$delivery_boy->email}}">{{$delivery_boy->name}}</option>
                                             @endforeach
                                         </select>
-                                        <label for="delivery_boy_email">Select delivery boy</label>
+                                        <label for="delivery_boy_email">Выбрать курьера</label>
                                     </div>
-                                    <input type="submit" class="btn btn-success rounded-pill" value="Assign">
+                                    <input type="submit" class="btn btn-success rounded-pill" value="Выбрать">
                                 </form>
                             </div>
                         </div>
                     </li>
                 @empty
                     <li class="list-group-item">
-                        <div class="alert alert-warning">No new orders</div>
+                        <div class="alert alert-warning">Нет новых заказов</div>
                     </li>
                 @endforelse
             </ul>

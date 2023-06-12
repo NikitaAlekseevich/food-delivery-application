@@ -3,14 +3,14 @@
     <main class="container my-5" style="max-width: 900px">
         <div class="row">
             <div class="col-12">
-                <div class="fs-5 fw-bold mb-2 text-decoration-underline">List of all item:</div>
+                <div class="fs-5 fw-bold mb-2 text-decoration-underline">Cписок всех блюд:</div>
                 <table class="table table-bordered border-secondary">
                     <thead>
                     <tr>
-                        <th>Order ID</th>
-                        <th>Order address</th>
-                        <th>Order items</th>
-                        <th>Order status</th>
+                        <th>Номер заказа</th>
+                        <th>Адрес заказа</th>
+                        <th>Заказ</th>
+                        <th>Статус Заказа</th>
                     </tr>
                     </thead>
                     <tbody>

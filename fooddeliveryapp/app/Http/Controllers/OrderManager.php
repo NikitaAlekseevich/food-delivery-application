@@ -147,10 +147,12 @@ class OrderManager extends Controller
 
     function calculateEstimatedTime($user)
     {
-        $origin_lat = 55.670169;
-        $origin_lon = 37.480047;
 
-        $apiURL = "https://api.nextbillion.io/distancematrix/json?origins=$origin_lat,$origin_lon&destinations=$user->destination_lat,$user->destination_lon&mode=4w&key=your-nextbillion-api-key-here"; // go to nextbillion.ai
+
+        $origin_lat = 34.0581903;
+        $origin_lon = -118.2383913;
+
+        $apiURL = "https://api.nextbillion.io/distancematrix/json?origins=$origin_lat,$origin_lon&destinations=$user->destination_lat,$user->destination_lon&mode=4w&key=b98e9dd2f9414231bae19340b76feff0";
         $response = json_decode(Http::get($apiURL));
         $dist_dur['distance'] = $response->rows[0]->elements[0]->distance->value;
         $dist_dur['duration'] = $response->rows[0]->elements[0]->duration->value;

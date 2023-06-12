@@ -6,10 +6,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="{{route("products")}}">List Products</a>
-        <a class="nav-link" href="{{route("order.list")}}">Orders</a>
-        <a class="nav-link" href="{{route("logout")}}">Logout</a>
+        <a class="nav-link active" aria-current="page" href="{{route("dashboard")}}">Домой</a>
+        <a class="nav-link" href="{{route("products")}}">Список продуктов</a>
+        <a class="nav-link" href="{{route("order.list")}}">Заказы</a>
+        <a class="nav-link" href="{{route("logout")}}">Выйти</a>
       </div>
     </div>
   </div>
